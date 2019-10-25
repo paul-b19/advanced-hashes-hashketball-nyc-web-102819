@@ -111,9 +111,12 @@ end
 def num_points_scored(player_name)
   points = 0
   game_hash.each_value do |v|
+    binding.pry
     v.each_value do |vv|
+      binding.pry
       if vv.class == Array
         vv.each do |i|
+          binding.pry
           if i.class == Hash
             points = i[:points] if i[:player_name] == player_name
           end
